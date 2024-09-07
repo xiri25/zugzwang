@@ -15,31 +15,42 @@ pub fn main() void {
     renderer.nice_print(renderer.BgColor.MAGENTA, renderer.TextColor.BLACK, "     \n");
     std.debug.print("\n\n\n", .{});
 
-    {
-        for (0..4) |_| {
-            for (0..4) |_| {
-                for (0..8) |i| {
-                    var bgcolor_chess = renderer.BgColor.GREEN;
-                    if (i % 2 == 0) {
-                        bgcolor_chess = renderer.BgColor.WHITE;
-                    }
-
-                    renderer.nice_print(bgcolor_chess, renderer.TextColor.BLACK, "        ");
-                }
-                std.debug.print("\n", .{});
-            }
-
-            for (0..4) |_| {
-                for (0..8) |i| {
-                    var bgcolor_chess = renderer.BgColor.GREEN;
-                    if (i % 2 == 1) {
-                        bgcolor_chess = renderer.BgColor.WHITE;
-                    }
-
-                    renderer.nice_print(bgcolor_chess, renderer.TextColor.BLACK, "        ");
-                }
-                std.debug.print("\n", .{});
-            }
-        }
-    }
+    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("| r | n | b | q | k | b | n | r |", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("| p | p | p | p | p | p | p | p |", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("|   |   |   |   |   |   |   |   |", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("|   |   |   |   |   |   |   |   |", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("|   |   |   |   |   |   |   |   |", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("|   |   |   |   |   |   |   |   |", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("|   |   |   |   |   |   |   |   |", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("| P | P | P | P | P | P | P | P |", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("| R | N | B | Q | K | B | N | R |", .{});
+    std.debug.print("\n", .{});
+    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
+    std.debug.print("\n", .{});
 }
