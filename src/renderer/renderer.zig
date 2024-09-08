@@ -1,4 +1,6 @@
 const std = @import("std");
+const gs = @import("../gamestate/gamestate.zig");
+const pieces = @import("../gamestate/pieces.zig");
 
 pub const ascii_opener = "\x1b[";
 pub const ascii_closer = "\x1b[0";
@@ -52,4 +54,18 @@ pub fn nice_print(bg_color: BgColor, text_color: TextColor, text: []const u8) vo
     // \x1b[0m cerrar y color back to default
 
     std.debug.print("{s}{d};{d}m{s}{s}m", .{ ascii_opener, @intFromEnum(bg_color), @intFromEnum(text_color), text, ascii_closer });
+}
+
+// gamestate should be a pointer???
+pub fn printChessBoardUgly(gamestate: *[8][8]pieces.Pieces) void {
+    for (0..8) |i| {
+        for (0..8) |j| {
+            const piece = gamestate[i][j];
+            const symbol = pieces.PieceEnumToString(piece);
+
+            // {s} porque no están null terminated segun gepeto
+            std.debug.print("{s} ", .{symbol});
+        }
+        std.debug.print("\n", .{});
+    }
 }

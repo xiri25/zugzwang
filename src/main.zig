@@ -1,4 +1,6 @@
 const std = @import("std");
+const gs = @import("gamestate/gamestate.zig");
+const pieces = @import("gamestate/pieces.zig");
 
 const renderer = @import("renderer/renderer.zig");
 
@@ -41,10 +43,6 @@ pub fn main() void {
     std.debug.print("\n", .{});
     std.debug.print("+---+---+---+---+---+---+---+---+", .{});
     std.debug.print("\n", .{});
-    std.debug.print("|   |   |   |   |   |   |   |   |", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
-    std.debug.print("\n", .{});
     std.debug.print("| P | P | P | P | P | P | P | P |", .{});
     std.debug.print("\n", .{});
     std.debug.print("+---+---+---+---+---+---+---+---+", .{});
@@ -53,4 +51,17 @@ pub fn main() void {
     std.debug.print("\n", .{});
     std.debug.print("+---+---+---+---+---+---+---+---+", .{});
     std.debug.print("\n", .{});
+    std.debug.print("\n", .{});
+
+    // 0 1 2 3 4 5 6 7
+    //for (0..8) |i| {
+    //    std.debug.print("{d} ", .{i});
+    //}
+
+    std.debug.print("\n", .{});
+    std.debug.print("\n", .{});
+
+    var game = gs.GameState{};
+    game.CreateGame();
+    renderer.printChessBoardUgly(&game.chessboard);
 }
