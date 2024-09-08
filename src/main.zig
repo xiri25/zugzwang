@@ -17,51 +17,13 @@ pub fn main() void {
     renderer.nice_print(renderer.BgColor.MAGENTA, renderer.TextColor.BLACK, "     \n");
     std.debug.print("\n\n\n", .{});
 
-    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("| r | n | b | q | k | b | n | r |", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("| p | p | p | p | p | p | p | p |", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("|   |   |   |   |   |   |   |   |", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("|   |   |   |   |   |   |   |   |", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("|   |   |   |   |   |   |   |   |", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("|   |   |   |   |   |   |   |   |", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("| P | P | P | P | P | P | P | P |", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("| R | N | B | Q | K | B | N | R |", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("+---+---+---+---+---+---+---+---+", .{});
-    std.debug.print("\n", .{});
-    std.debug.print("\n", .{});
-
     // 0 1 2 3 4 5 6 7
     //for (0..8) |i| {
     //    std.debug.print("{d} ", .{i});
     //}
 
-    std.debug.print("\n", .{});
-    std.debug.print("\n", .{});
-
     var game = gs.GameState{};
     game.CreateGame();
-    renderer.printChessBoardUgly(&game.chessboard);
+    std.debug.print("\n", .{});
+    renderer.printChessBoard(&game.chessboard);
 }

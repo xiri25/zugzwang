@@ -57,10 +57,10 @@ pub fn nice_print(bg_color: BgColor, text_color: TextColor, text: []const u8) vo
 }
 
 // gamestate should be a pointer???
-pub fn printChessBoardUgly(gamestate: *[8][8]pieces.Pieces) void {
+pub fn printChessBoardUgly(board: *[8][8]pieces.Pieces) void {
     for (0..8) |i| {
         for (0..8) |j| {
-            const piece = gamestate[i][j];
+            const piece = board[i][j];
             const symbol = pieces.PieceEnumToString(piece);
 
             // {s} porque no están null terminated segun gepeto
@@ -68,4 +68,19 @@ pub fn printChessBoardUgly(gamestate: *[8][8]pieces.Pieces) void {
         }
         std.debug.print("\n", .{});
     }
+}
+
+pub fn printChessBoard(board: *[8][8]pieces.Pieces) void {
+    for (0..8) |i| {
+        std.debug.print("+---+---+---+---+---+---+---+---+\n", .{});
+        for (0..8) |j| {
+            const piece = board[i][j];
+            const symbol = pieces.PieceEnumToString(piece);
+
+            // {s} porque no están null terminated segun gepeto
+            std.debug.print("| {s} ", .{symbol});
+        }
+        std.debug.print("|\n", .{});
+    }
+    std.debug.print("+---+---+---+---+---+---+---+---+\n", .{});
 }
